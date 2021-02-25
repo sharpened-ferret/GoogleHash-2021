@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -17,6 +18,7 @@ public class Parser {
     public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
     public HashMap<Integer, Intersection> InterMap = new HashMap<Integer, Intersection>();
     public HashMap<String, Intersection > InterStreetMap = new HashMap<String, Intersection>();
+    public ArrayList<String> usedStreets = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -75,6 +77,7 @@ public class Parser {
 
                     for (int i = 0; i < routeLength - 1; i++) {
                         route[i] = parameters[i+1];
+                        usedStreets.add(route[i]);
                     }
                     StreetMap.get(route[0]).numCarsAtStart += 1;
                     CarMap.put(increment, new Car(routeLength, route));
