@@ -4,17 +4,18 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Parser {
-    public static void parse(String filepath) {
-        //Local vars for data store [as required]
-        int duration;
-        int numIntersections;
-        int numStreets = 0;
-        int numCars;
-        int bonusPoints;
+    //Local vars for data store [as required] (yes public vars are bad practice, but this is speedy code)
+    public int duration;
+    public int numIntersections;
+    public int numStreets = 0;
+    public int numCars;
+    public int bonusPoints;
 
-        //HashMap to reference data objects [replace object ref with real data object class name]
-        HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
-        HashMap<String, Object> StreetMap = new HashMap<String, Object>();
+    //HashMap to reference data objects [replace object ref with real data object class name]
+    public HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
+    public HashMap<String, Object> StreetMap = new HashMap<String, Object>();
+
+    public Parser(String filepath) {
 
         //Increment to count line no.
         int increment=0;
@@ -46,7 +47,12 @@ public class Parser {
                 }
                 else {
                     String[] parameters = data.split(" ");
-                    //CarMap.put(increment, new Car());
+                    int routeLength = Integer.parseInt(parameters[0]);
+                    String[] route = new String[routeLength - 1];
+                    for (int i = 0; i < routeLength; i++) {
+                        route[i] = parameters[i+1];
+                    }
+                    CarMap.put(increment, new Car(routeLength, route));
                 }
             }
             InputReader.close();
