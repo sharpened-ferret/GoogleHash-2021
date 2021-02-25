@@ -16,7 +16,7 @@ public class Parser {
     public HashMap<Integer, Car> CarMap = new HashMap<Integer, Car>();
     public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
     public HashMap<Integer, Intersection> InterMap = new HashMap<Integer, Intersection>();
-    public HashMap<Street, Intersection > InterStreetMap = new HashMap<Street, Intersection>();
+    public HashMap<String, Intersection > InterStreetMap = new HashMap<String, Intersection>();
 
     @Override
     public String toString() {
@@ -66,7 +66,7 @@ public class Parser {
                     InterMap.get(startIntersection).outStreets.add(currStreet);
                     InterMap.get(endIntersection).inStreets.add(currStreet);
                     StreetMap.put(parameters[2], currStreet);
-                    InterStreetMap.put(currStreet, InterMap.get(endIntersection));
+                    InterStreetMap.put(streetName, InterMap.get(startIntersection));
                 }
                 else {
                     String[] parameters = data.split(" ");

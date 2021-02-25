@@ -6,10 +6,11 @@ public class Intersection {
     public ArrayList<Street> inStreets;
     public ArrayList<Street> outStreets;
     public String schedule;
-    public int numStartCars;
+    public int numStartCars = 0;
 
     public Intersection(int ID) {
         this.ID = ID;
+
         inStreets = new ArrayList<Street>();
         outStreets = new ArrayList<Street>();
     }

@@ -9,7 +9,9 @@ public class Main {
         Parser fData = new Parser("src/f.txt");
 
 
-
+        for(int i = 0; i < aData.numIntersections; i++) {
+            System.out.println(aData.InterMap.get(i).numStartCars);
+        }
         FileWrite.FileWrite("a",aData);
         FileWrite.FileWrite("b",bData);
         FileWrite.FileWrite("c",cData);
