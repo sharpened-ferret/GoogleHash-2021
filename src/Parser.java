@@ -8,12 +8,12 @@ public class Parser {
         //Local vars for data store [as required]
         int duration;
         int numIntersections;
-        int numStreets;
+        int numStreets = 0;
         int numCars;
         int bonusPoints;
 
         //HashMap to reference data objects [replace object ref with real data object class name]
-        HashMap<Integer, Object> DataMap = new HashMap<Integer, Object>();
+        HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
         HashMap<String, Object> StreetMap = new HashMap<String, Object>();
 
         //Increment to count line no.
@@ -36,9 +36,17 @@ public class Parser {
                 }
 
                 //Writes data to object [replace with real data object]
+                else if (increment <= numStreets) {
+                    String[] parameters = data.split(" ");
+                    int startIntersection = Integer.parseInt(parameters[0]);
+                    int endIntersection = Integer.parseInt(parameters[1]);
+                    String streetName = parameters[2];
+                    int travelTime = Integer.parseInt(parameters[3]);
+                    StreetMap.put(parameters[2], new Street(startIntersection, endIntersection, streetName, travelTime));
+                }
                 else {
-                    String[] parameters =data.split(" ");
-                    DataMap.put(increment, new Object());
+                    String[] parameters = data.split(" ");
+                    //CarMap.put(increment, new Car());
                 }
             }
             InputReader.close();
