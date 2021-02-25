@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class Parser {
     public HashMap<Integer, Car> CarMap = new HashMap<Integer, Car>();
     public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
     public HashMap<Integer, Intersection> InterMap = new HashMap<Integer, Intersection>();
+    public HashMap<Street, Intersection > InterStreetMap = new HashMap<Street, Intersection>();
 
     @Override
     public String toString() {
@@ -64,14 +66,17 @@ public class Parser {
                     InterMap.get(startIntersection).outStreets.add(currStreet);
                     InterMap.get(endIntersection).inStreets.add(currStreet);
                     StreetMap.put(parameters[2], currStreet);
+                    InterStreetMap.put(currStreet, InterMap.get(endIntersection));
                 }
                 else {
                     String[] parameters = data.split(" ");
                     int routeLength = Integer.parseInt(parameters[0]);
                     String[] route = new String[routeLength - 1];
+
                     for (int i = 0; i < routeLength - 1; i++) {
                         route[i] = parameters[i+1];
                     }
+                    InterStreetMap.get(route[0]).numStartCars += 1;
                     CarMap.put(increment, new Car(routeLength, route));
                 }
                 increment++;

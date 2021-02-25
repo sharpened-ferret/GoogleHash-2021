@@ -6,6 +6,7 @@ public class Intersection {
     public ArrayList<Street> inStreets;
     public ArrayList<Street> outStreets;
     public String schedule;
+    public int numStartCars;
 
     public Intersection(int ID) {
         this.ID = ID;
