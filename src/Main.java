@@ -38,10 +38,12 @@ public class Main {
             fSolution += aData.InterMap.get(i).toString();
         }
 
+        FileWrite.FileWrite("a",aSolution);
+        FileWrite.FileWrite("b",bSolution);
         FileWrite.FileWrite("c",cSolution);
-
-
-
+        FileWrite.FileWrite("d",dSolution);
+        FileWrite.FileWrite("e",eSolution);
+        FileWrite.FileWrite("f",fSolution);
 
         System.out.println("A: " + aData.toString());
         System.out.println("B: " + bData.toString());
