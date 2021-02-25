@@ -20,6 +20,7 @@ public class Intersection {
         outString += inStreets.size() + "\n";
         for (int i = 0; i < inStreets.size(); i++) {
             String currString = inStreets.get(i).name + " 1\n";
+            outString += currString;
         }
 
         return outString;
