@@ -8,6 +8,13 @@ public class Main {
         Parser eData = new Parser("src/e.txt");
         Parser fData = new Parser("src/f.txt");
 
+        String aSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            aSolution += aData.InterMap.get(i).toString();
+        }
+
+        System.out.println(aSolution);
+
         System.out.println("A: " + aData.toString());
         System.out.println("B: " + bData.toString());
         System.out.println("C: " + cData.toString());
