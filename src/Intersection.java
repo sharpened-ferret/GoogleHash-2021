@@ -23,8 +23,16 @@ public class Intersection {
         outString += inStreets.size() + "\n";
         for (int i = 0; i < inStreets.size()/2; i++) {
             String currString = inStreets.get(i).name + " 2\n";
+            //String currString = inStreets.get(i).name + " " + numStartCars +"\n";
             outString += currString;
         }
+        /*
+        for (int i = inStreets.size()/2; i < inStreets.size(); i++) {
+            String currString = inStreets.get(i).name + " 1\n";
+            outString += currString;
+        }
+
+         */
 
         return outString;
     }
