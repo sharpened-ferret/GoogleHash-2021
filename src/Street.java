@@ -11,4 +11,14 @@ public class Street {
         this.name = name;
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "name='" + name + '\'' +
+                ", startingIntersection=" + startingIntersection +
+                ", endingIntersection=" + endingIntersection +
+                ", time=" + time +
+                '}';
+    }
 }
