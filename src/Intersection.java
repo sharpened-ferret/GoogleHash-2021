@@ -21,7 +21,7 @@ public class Intersection {
         Collections.sort(inStreets, new CarNumComparator());
         outString += ID + "\n";
         outString += inStreets.size() + "\n";
-        for (int i = 0; i < inStreets.size()/2; i++) {
+        for (int i = 0; i < inStreets.size(); i++) {
             String currString = inStreets.get(i).name + " 2\n";
             //String currString = inStreets.get(i).name + " " + numStartCars +"\n";
             outString += currString;
