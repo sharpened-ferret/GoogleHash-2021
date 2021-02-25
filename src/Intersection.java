@@ -7,10 +7,8 @@ public class Intersection {
     public ArrayList<Street> outStreets;
     public String schedule;
 
-    public Intersection(int ID, ArrayList<Street> inStreets, ArrayList<Street> outStreets) {
+    public Intersection(int ID) {
         this.ID = ID;
-        this.inStreets = inStreets;
-        this.outStreets = outStreets;
     }
 
     public String toString() {
