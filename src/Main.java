@@ -4,5 +4,15 @@ public class Main {
 	    Parser aData = new Parser("src/a.txt");
         Parser bData = new Parser("src/b.txt");
         Parser cData = new Parser("src/c.txt");
+        Parser dData = new Parser("src/d.txt");
+        Parser eData = new Parser("src/e.txt");
+        Parser fData = new Parser("src/f.txt");
+
+        System.out.println("A: " + aData.toString());
+        System.out.println("B: " + bData.toString());
+        System.out.println("C: " + cData.toString());
+        System.out.println("D: " + dData.toString());
+        System.out.println("E: " + eData.toString());
+        System.out.println("F: " + fData.toString());
     }
 }
