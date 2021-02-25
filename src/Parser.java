@@ -12,8 +12,8 @@ public class Parser {
     public int bonusPoints;
 
     //HashMap to reference data objects [replace object ref with real data object class name]
-    public HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
-    public HashMap<String, Object> StreetMap = new HashMap<String, Object>();
+    public HashMap<Integer, Car> CarMap = new HashMap<Integer, Car>();
+    public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
 
     @Override
     public String toString() {
