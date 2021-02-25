@@ -14,6 +14,7 @@ public class Parser {
     //HashMap to reference data objects [replace object ref with real data object class name]
     public HashMap<Integer, Car> CarMap = new HashMap<Integer, Car>();
     public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
+    public HashMap<Integer, Intersection> InterMap = new HashMap<Integer, Intersection>();
 
     @Override
     public String toString() {
@@ -73,7 +74,5 @@ public class Parser {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
-
     }
 }
