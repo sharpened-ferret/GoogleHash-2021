@@ -16,6 +16,7 @@ public class Parser {
     public HashMap<String, Object> StreetMap = new HashMap<String, Object>();
 
     public Parser(String filepath) {
+        System.out.println(filepath);
 
         //Increment to count line no.
         int increment=0;
@@ -49,11 +50,12 @@ public class Parser {
                     String[] parameters = data.split(" ");
                     int routeLength = Integer.parseInt(parameters[0]);
                     String[] route = new String[routeLength - 1];
-                    for (int i = 0; i < routeLength; i++) {
+                    for (int i = 0; i < routeLength - 1; i++) {
                         route[i] = parameters[i+1];
                     }
                     CarMap.put(increment, new Car(routeLength, route));
                 }
+                increment++;
             }
             InputReader.close();
         } catch (FileNotFoundException e) {
