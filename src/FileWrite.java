@@ -11,7 +11,7 @@ public class FileWrite {
 
             String aSolution = Integer.toString(data.numIntersections) + "\n";
             for(int i = 0; i < data.numIntersections; i++) {
-                aSolution += data.InterMap.get(i).toString();
+                aSolution += data.InterMap.get(i).toString(data);
             }
             myWriter.write(aSolution);
             myWriter.close();
@@ -21,6 +21,7 @@ public class FileWrite {
             e.printStackTrace();
         }
     }
+
     public static void FileWriterPlus(String solName, Parser data){
         try {
             FileWriter myWriter = new FileWriter(solName + "_solution.txt");

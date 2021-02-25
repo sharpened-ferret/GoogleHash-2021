@@ -16,16 +16,24 @@ public class Intersection {
         outStreets = new ArrayList<Street>();
     }
 
-    public String toString() {
+    public String toString(Parser data) {
         String outString = "";
         Collections.sort(inStreets, new CarNumComparator());
+        Collections.reverse(inStreets);
         outString += ID + "\n";
-        outString += inStreets.size() + "\n";
+        String someOutString = "";
+        int numStreets = 0;
+        String currString = "";
         for (int i = 0; i < inStreets.size(); i++) {
-            String currString = inStreets.get(i).name + " 2\n";
+            if (data.usedStreets.contains(inStreets.get(i).name)) {
+                currString = inStreets.get(i).name + " 1\n";
+                numStreets++;
+            }
             //String currString = inStreets.get(i).name + " " + numStartCars +"\n";
-            outString += currString;
+            someOutString += currString;
         }
+        outString += numStreets + "\n";
+        outString += someOutString;
         /*
         for (int i = inStreets.size()/2; i < inStreets.size(); i++) {
             String currString = inStreets.get(i).name + " 1\n";
