@@ -12,12 +12,12 @@ public class Main {
         for(int i = 0; i < aData.numIntersections; i++) {
             System.out.println(aData.InterMap.get(i).numStartCars);
         }
-        FileWrite.FileWrite("a",aData);
-        FileWrite.FileWrite("b",bData);
-        FileWrite.FileWrite("c",cData);
-        FileWrite.FileWrite("d",dData);
-        FileWrite.FileWrite("e",eData);
-        FileWrite.FileWrite("f",fData);
+        FileWrite.FileWriterPlus("a",aData);
+        FileWrite.FileWriterPlus("b",bData);
+        FileWrite.FileWriterPlus("c",cData);
+        FileWrite.FileWriterPlus("d",dData);
+        FileWrite.FileWriterPlus("e",eData);
+        FileWrite.FileWriterPlus("f",fData);
 
         System.out.println("A: " + aData.toString());
         System.out.println("B: " + bData.toString());

@@ -76,7 +76,7 @@ public class Parser {
                     for (int i = 0; i < routeLength - 1; i++) {
                         route[i] = parameters[i+1];
                     }
-                    InterStreetMap.get(route[0]).numStartCars += 1;
+                    StreetMap.get(route[0]).numCarsAtStart += 1;
                     CarMap.put(increment, new Car(routeLength, route));
                 }
                 increment++;
