@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Intersection {
 
@@ -17,11 +18,11 @@ public class Intersection {
 
     public String toString() {
         String outString = "";
-
+        Collections.sort(inStreets, new CarNumComparator());
         outString += ID + "\n";
         outString += inStreets.size() + "\n";
-        for (int i = 0; i < inStreets.size(); i++) {
-            String currString = inStreets.get(i).name + " 1\n";
+        for (int i = 0; i < inStreets.size()/2; i++) {
+            String currString = inStreets.get(i).name + " 2\n";
             outString += currString;
         }
 
