@@ -38,7 +38,7 @@ public class Main {
             fSolution += aData.InterMap.get(i).toString();
         }
 
-        FileWrite fileWrite = new FileWrite("c",cSolution);
+        FileWrite.FileWrite("c",cSolution);
 
 
 

@@ -5,7 +5,7 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class FileWrite {
 
 
-    public FileWrite(String solName, String data){
+    public static void FileWrite(String solName, String data){
         try {
             FileWriter myWriter = new FileWriter(solName + "_solution.txt");
             myWriter.write(data);
