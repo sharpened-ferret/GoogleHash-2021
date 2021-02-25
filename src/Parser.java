@@ -15,6 +15,17 @@ public class Parser {
     public HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
     public HashMap<String, Object> StreetMap = new HashMap<String, Object>();
 
+    @Override
+    public String toString() {
+        return "Parser{" +
+                "duration=" + duration +
+                ", numIntersections=" + numIntersections +
+                ", numStreets=" + numStreets +
+                ", numCars=" + numCars +
+                ", bonusPoints=" + bonusPoints +
+                '}';
+    }
+
     public Parser(String filepath) {
         System.out.println(filepath);
 
@@ -62,5 +73,7 @@ public class Parser {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+
+
     }
 }
