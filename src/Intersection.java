@@ -9,6 +9,8 @@ public class Intersection {
 
     public Intersection(int ID) {
         this.ID = ID;
+        inStreets = new ArrayList<Street>();
+        outStreets = new ArrayList<Street>();
     }
 
     public String toString() {
