@@ -46,7 +46,12 @@ public class Parser {
                 }
                 else {
                     String[] parameters = data.split(" ");
-                    //CarMap.put(increment, new Car());
+                    int routeLength = Integer.parseInt(parameters[0]);
+                    String[] route = new String[routeLength - 1];
+                    for (int i = 0; i < routeLength; i++) {
+                        route[i] = parameters[i+1];
+                    }
+                    CarMap.put(increment, new Car(routeLength, route));
                 }
             }
             InputReader.close();
