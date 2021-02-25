@@ -13,7 +13,32 @@ public class Main {
             aSolution += aData.InterMap.get(i).toString();
         }
 
-        System.out.println(aSolution);
+        String bSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            bSolution += aData.InterMap.get(i).toString();
+        }
+
+        String cSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            cSolution += aData.InterMap.get(i).toString();
+        }
+
+        String dSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            dSolution += aData.InterMap.get(i).toString();
+        }
+
+        String eSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            eSolution += aData.InterMap.get(i).toString();
+        }
+
+        String fSolution = Integer.toString(aData.numIntersections) + "\n";
+        for(int i = 0; i < aData.numIntersections; i++) {
+            fSolution += aData.InterMap.get(i).toString();
+        }
+
+
 
         System.out.println("A: " + aData.toString());
         System.out.println("B: " + bData.toString());
