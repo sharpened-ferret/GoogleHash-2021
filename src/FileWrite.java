@@ -5,10 +5,15 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class FileWrite {
 
 
-    public static void FileWrite(String solName, String data){
+    public static void FileWrite(String solName, Parser data){
         try {
             FileWriter myWriter = new FileWriter(solName + "_solution.txt");
-            myWriter.write(data);
+
+            String aSolution = Integer.toString(data.numIntersections) + "\n";
+            for(int i = 0; i < data.numIntersections; i++) {
+                aSolution += data.InterMap.get(i).toString();
+            }
+            myWriter.write(aSolution);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
