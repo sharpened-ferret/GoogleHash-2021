@@ -13,29 +13,29 @@ public class Main {
             aSolution += aData.InterMap.get(i).toString();
         }
 
-        String bSolution = Integer.toString(aData.numIntersections) + "\n";
-        for(int i = 0; i < aData.numIntersections; i++) {
-            bSolution += aData.InterMap.get(i).toString();
+        String bSolution = Integer.toString(bData.numIntersections) + "\n";
+        for(int i = 0; i < bData.numIntersections; i++) {
+            bSolution += bData.InterMap.get(i).toString();
         }
 
-        String cSolution = Integer.toString(aData.numIntersections) + "\n";
-        for(int i = 0; i < aData.numIntersections; i++) {
-            cSolution += aData.InterMap.get(i).toString();
+        String cSolution = Integer.toString(cData.numIntersections) + "\n";
+        for(int i = 0; i < cData.numIntersections; i++) {
+            cSolution += cData.InterMap.get(i).toString();
         }
 
-        String dSolution = Integer.toString(aData.numIntersections) + "\n";
-        for(int i = 0; i < aData.numIntersections; i++) {
-            dSolution += aData.InterMap.get(i).toString();
+        String dSolution = Integer.toString(dData.numIntersections) + "\n";
+        for(int i = 0; i < dData.numIntersections; i++) {
+            dSolution += dData.InterMap.get(i).toString();
         }
 
-        String eSolution = Integer.toString(aData.numIntersections) + "\n";
-        for(int i = 0; i < aData.numIntersections; i++) {
-            eSolution += aData.InterMap.get(i).toString();
+        String eSolution = Integer.toString(eData.numIntersections) + "\n";
+        for(int i = 0; i < eData.numIntersections; i++) {
+            eSolution += eData.InterMap.get(i).toString();
         }
 
-        String fSolution = Integer.toString(aData.numIntersections) + "\n";
-        for(int i = 0; i < aData.numIntersections; i++) {
-            fSolution += aData.InterMap.get(i).toString();
+        String fSolution = Integer.toString(fData.numIntersections) + "\n";
+        for(int i = 0; i < fData.numIntersections; i++) {
+            fSolution += fData.InterMap.get(i).toString();
         }
 
         FileWrite.FileWrite("a",aSolution);
