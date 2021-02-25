@@ -13,6 +13,16 @@ public class Intersection {
         this.outStreets = outStreets;
     }
 
+    public String toString() {
+        String outString = "";
 
+        outString += ID + "\n";
+        outString += inStreets.size() + "\n";
+        for (int i = 0; i < inStreets.size(); i++) {
+            String currString = inStreets.get(i).name + " 1\n";
+        }
+
+        return outString;
+    }
 
 }
