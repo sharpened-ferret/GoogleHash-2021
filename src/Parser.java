@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,9 +12,20 @@ public class Parser {
     public int bonusPoints;
 
     //HashMap to reference data objects [replace object ref with real data object class name]
-    public HashMap<Integer, Object> CarMap = new HashMap<Integer, Object>();
-    public HashMap<String, Object> StreetMap = new HashMap<String, Object>();
+    public HashMap<Integer, Car> CarMap = new HashMap<Integer, Car>();
+    public HashMap<String, Street> StreetMap = new HashMap<String, Street>();
     public HashMap<Integer, Intersection> InterMap = new HashMap<Integer, Intersection>();
+
+    @Override
+    public String toString() {
+        return "Parser{" +
+                "duration=" + duration +
+                ", numIntersections=" + numIntersections +
+                ", numStreets=" + numStreets +
+                ", numCars=" + numCars +
+                ", bonusPoints=" + bonusPoints +
+                '}';
+    }
 
     public Parser(String filepath) {
         System.out.println(filepath);
@@ -37,10 +47,6 @@ public class Parser {
                     numStreets = Integer.parseInt(dataArray[2]);
                     numCars = Integer.parseInt(dataArray[3]);
                     bonusPoints = Integer.parseInt(dataArray[4]);
-
-                    for (int i = 0; i < numIntersections; i++) {
-                        InterMap.put(i, new Intersection(i));
-                    }
                 }
 
                 //Writes data to object [replace with real data object]
@@ -50,10 +56,7 @@ public class Parser {
                     int endIntersection = Integer.parseInt(parameters[1]);
                     String streetName = parameters[2];
                     int travelTime = Integer.parseInt(parameters[3]);
-                    Street currStreet = new Street(startIntersection, endIntersection, streetName, travelTime);
-                    InterMap.get(startIntersection).outStreets.add(currStreet);
-                    InterMap.get(endIntersection).inStreets.add(currStreet);
-                    StreetMap.put(parameters[2], currStreet);
+                    StreetMap.put(parameters[2], new Street(startIntersection, endIntersection, streetName, travelTime));
                 }
                 else {
                     String[] parameters = data.split(" ");
