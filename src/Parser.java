@@ -47,6 +47,10 @@ public class Parser {
                     numStreets = Integer.parseInt(dataArray[2]);
                     numCars = Integer.parseInt(dataArray[3]);
                     bonusPoints = Integer.parseInt(dataArray[4]);
+
+                    for (int i = 0; i < numIntersections; i++) {
+                        InterMap.put(i, new Intersection(i));
+                    }
                 }
 
                 //Writes data to object [replace with real data object]
@@ -56,7 +60,10 @@ public class Parser {
                     int endIntersection = Integer.parseInt(parameters[1]);
                     String streetName = parameters[2];
                     int travelTime = Integer.parseInt(parameters[3]);
-                    StreetMap.put(parameters[2], new Street(startIntersection, endIntersection, streetName, travelTime));
+                    Street currStreet = new Street(startIntersection, endIntersection, streetName, travelTime);
+                    InterMap.get(startIntersection).outStreets.add(currStreet);
+                    InterMap.get(endIntersection).inStreets.add(currStreet);
+                    StreetMap.put(parameters[2], currStreet);
                 }
                 else {
                     String[] parameters = data.split(" ");
